@@ -1,12 +1,18 @@
 package org.example.entidades;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
 public class Entrenador {
+    @Id
     Long idEntrenador;
     String nombre;
     LocalDate fechaNacimiento;
     int salario;
+    @OneToOne
+    @JoinColumn(name = "entrenador")
     Equipo equipo;
 
     public Entrenador() {

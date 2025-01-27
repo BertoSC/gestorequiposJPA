@@ -11,6 +11,15 @@ public enum Division {
         this.divisionCadena=divisionCadena;
     }
 
+    public static Division getDivision(String divisionCadena){
+        for (Division div: Division.values()){
+            if (div.getDivisionCadena().equalsIgnoreCase(divisionCadena)){
+                return div;
+            }
+        }
+        return null;
+    }
+
     public String getDivisionCadena() {
         return divisionCadena;
     }

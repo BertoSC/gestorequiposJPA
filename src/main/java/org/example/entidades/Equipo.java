@@ -1,13 +1,22 @@
 package org.example.entidades;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Equipo {
+    @Id
     Long idEquipo;
     String nombre;
     String ciudad;
+    @Convert(converter = ConferenciaConverter.class)
     Conferencia conferencia;
+    @Convert(converter = DivisionConverter.class)
     Division division;
     String nombreCompleto;
+    @Column(unique = true)
     String abreviatura;
+    @OneToOne (mappedBy = "equipo")
+    Entrenador entrenador;
 
     public Equipo() {
     }
@@ -35,56 +44,63 @@ public class Equipo {
         return idEquipo;
     }
 
-    public void setIdEquipo(Long idEquipo) {
+    public Equipo setIdEquipo(Long idEquipo) {
         this.idEquipo = idEquipo;
+        return this;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public Equipo setNombre(String nombre) {
         this.nombre = nombre;
+        return this;
     }
 
     public String getCiudad() {
         return ciudad;
     }
 
-    public void setCiudad(String ciudad) {
+    public Equipo setCiudad(String ciudad) {
         this.ciudad = ciudad;
+        return this;
     }
 
     public Conferencia getConferencia() {
         return conferencia;
     }
 
-    public void setConferencia(Conferencia conferencia) {
+    public Equipo setConferencia(Conferencia conferencia) {
         this.conferencia = conferencia;
+        return this;
     }
 
     public Division getDivision() {
         return division;
     }
 
-    public void setDivision(Division division) {
+    public Equipo setDivision(Division division) {
         this.division = division;
+        return this;
     }
 
     public String getNombreCompleto() {
         return nombreCompleto;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
+    public Equipo setNombreCompleto(String nombreCompleto) {
         this.nombreCompleto = nombreCompleto;
+        return this;
     }
 
     public String getAbreviatura() {
         return abreviatura;
     }
 
-    public void setAbreviatura(String abreviatura) {
+    public Equipo setAbreviatura(String abreviatura) {
         this.abreviatura = abreviatura;
+        return this;
     }
 
     @Override

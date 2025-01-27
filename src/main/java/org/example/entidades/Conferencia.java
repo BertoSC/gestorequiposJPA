@@ -19,6 +19,15 @@ public enum Conferencia {
         this.conferenciaCadena = conferenciaCadena;
     }
 
+    public static Conferencia getConferencia (String conferenciaCadena){
+        for (Conferencia conf: Conferencia.values()){
+            if (conf.getConferenciaCadena().equals(conferenciaCadena)){
+                return conf;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         return "Conferencia{" +
