@@ -1,7 +1,7 @@
 package org.example.entidades;
 
+
 import com.google.gson.*;
-import org.h2.util.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

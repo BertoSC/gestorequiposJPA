@@ -12,8 +12,7 @@ public class Entrenador {
     String nombre;
     LocalDate fechaNacimiento;
     int salario;
-    @OneToOne
-    @JoinColumn(name = "id_equipo")
+    @OneToOne(mappedBy = "entrenador")
     Equipo equipo;
 
     public Entrenador() {

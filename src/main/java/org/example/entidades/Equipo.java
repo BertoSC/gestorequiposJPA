@@ -15,7 +15,8 @@ public class Equipo {
     String nombreCompleto;
     @Column(unique = true)
     String abreviatura;
-    @OneToOne (mappedBy = "equipo")
+    @OneToOne
+    @JoinColumn(name = "id_entrenador")
     Entrenador entrenador;
 
     public Equipo() {
