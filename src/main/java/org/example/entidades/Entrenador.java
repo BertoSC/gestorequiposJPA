@@ -7,12 +7,13 @@ import java.time.LocalDate;
 @Entity
 public class Entrenador {
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     Long idEntrenador;
     String nombre;
     LocalDate fechaNacimiento;
     int salario;
     @OneToOne
-    @JoinColumn(name = "entrenador")
+    @JoinColumn(name = "id_equipo")
     Equipo equipo;
 
     public Entrenador() {
