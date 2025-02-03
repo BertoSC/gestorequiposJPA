@@ -1,7 +1,7 @@
 package org.example.entidades;
 
 public enum Posicion {
-    BASE("G"), ESCOLTA("C"), ALERO("F"), ALAPIVOT("F-C"), PIVOT("C-F");
+    BASE("G"), ESCOLTA("C"), ALERO("F"), ALAPIVOT("F-C"), PIVOT("C-F"), DESCONOCIDA("Desconocida");
 
     String posicionString;
 
@@ -23,7 +23,7 @@ public enum Posicion {
                 return pos;
             }
         }
-        return null;
+        return Posicion.DESCONOCIDA;
     }
 
 }

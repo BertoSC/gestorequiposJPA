@@ -6,8 +6,8 @@
         </description>
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:C:\Users\a23albertogc\Desktop\AD\gestorequiposH2;DB_CLOSE_ON_EXIT=TRUE;DATABASE_TO_UPPER=FALSE;FILE_LOCK=NO"/>
-            <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:C:\Users\VSPC-BLACKFRIDAY\Desktop\AD\EQUIPOSNBA\gestorequiposH2;DB_CLOSE_ON_EXIT=TRUE;DATABASE_TO_UPPER=FALSE;FILE_LOCK=NO"/>-->
+            <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:C:\Users\a23albertogc\Desktop\AD\gestorequiposH2;DB_CLOSE_ON_EXIT=TRUE;DATABASE_TO_UPPER=FALSE;FILE_LOCK=NO"/>-->
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:C:\Users\VSPC-BLACKFRIDAY\Desktop\AD\EQUIPOSNBA\gestorequiposH2;DB_CLOSE_ON_EXIT=TRUE;DATABASE_TO_UPPER=FALSE;FILE_LOCK=NO"/>
             <property name="javax.persistence.jdbc.user" value=""/>
             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
             <property name="javax.persistence.jdbc.password" value=""/>

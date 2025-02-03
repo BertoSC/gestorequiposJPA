@@ -7,7 +7,7 @@ import jakarta.persistence.Converter;
 public class PosicionConverter implements AttributeConverter<Posicion,String> {
     @Override
     public String convertToDatabaseColumn(Posicion posicion) {
-        return posicion.getPosicionString();
+        return (posicion != null) ? posicion.getPosicionString() : "Desconocida";
     }
 
     @Override
