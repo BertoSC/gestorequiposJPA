@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jdk.swing.interop.SwingInterOpUtils;
 import org.example.entidades.*;
@@ -22,19 +23,32 @@ public class GestorNbaAPP {
     public static void main(String[] args) {
 
        Type listType = new TypeToken<List<Equipo>>() {}.getType();
+       Type jugListType = new TypeToken<List<Jugador>>(){}.getType();
        EntityManagerFactory enf = JpaNbaManager.getEntityManagerFactory("gestorequiposH2");
-       EquipoDAO equipoDAO = new EquipoDAO(enf.createEntityManager());
+       EntityManager em = enf.createEntityManager();
+       EquipoDAO equipoDAO = new EquipoDAO(em);
+       JugadorDAO jugadorDAO = new JugadorDAO(em);
+
        Gson gson = new GsonBuilder()
                 .registerTypeAdapter(listType, new EquipoDeserializer())
+               .registerTypeAdapter(jugListType, new JugadorDeserializer())
                 .setPrettyPrinting()
                 .create();
 
         Path url = Paths.get("src\\main\\resources\\equipos.json");
+        Path urlJug = Paths.get("src\\main\\resources\\jugadores.json");
         try {
             String json = Files.readString(url);
             List <Equipo> equipos = gson.fromJson(json, listType);
             for (Equipo eq: equipos){
                 equipoDAO.save(eq);
+            }
+
+            String jsonJug = Files.readString(urlJug);
+            List <Jugador> jugadores = gson.fromJson(jsonJug, jugListType);
+
+            for (Jugador ju: jugadores){
+                jugadorDAO.save(ju);
             }
 
         } catch (IOException e) {

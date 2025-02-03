@@ -88,112 +88,124 @@ public class Jugador {
         return idjugador;
     }
 
-    public void setIdjugador(Long idjugador) {
+    public Jugador setIdjugador(Long idjugador) {
         this.idjugador = idjugador;
+        return this;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public Jugador setNombre(String nombre) {
+        this.nombre = nombre; return this;
     }
 
     public String getApellidos() {
         return apellidos;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public Jugador setApellidos(String apellidos) {
+        this.apellidos = apellidos; return this;
     }
 
     public Equipo getEquipo() {
         return equipo;
     }
 
-    public void setEquipo(Equipo equipo) {
+    public Jugador setEquipo(Equipo equipo) {
         this.equipo = equipo;
+        return this;
     }
 
     public double getAltura() {
         return altura;
     }
 
-    public void setAltura(double altura) {
+    public Jugador setAltura(double altura) {
         this.altura = altura;
+        return this;
     }
 
     public double getPeso() {
         return peso;
     }
 
-    public void setPeso(double peso) {
+    public Jugador setPeso(double peso) {
         this.peso = peso;
+        return this;
     }
 
     public short getNumero() {
         return numero;
     }
 
-    public void setNumero(short numero) {
+    public Jugador setNumero(short numero) {
         this.numero = numero;
+        return this;
     }
 
     public int getAnoDraft() {
         return anoDraft;
     }
 
-    public void setAnoDraft(int anoDraft) {
+    public Jugador setAnoDraft(int anoDraft) {
         this.anoDraft = anoDraft;
+        return this;
     }
 
     public short getNumeroDraft() {
         return numeroDraft;
     }
 
-    public void setNumeroDraft(short numeroDraft) {
+    public Jugador setNumeroDraft(short numeroDraft) {
         this.numeroDraft = numeroDraft;
+        return this;
     }
 
     public short getRondaDraft() {
         return rondaDraft;
     }
 
-    public void setRondaDraft(short rondaDraft) {
+    public Jugador setRondaDraft(short rondaDraft) {
         this.rondaDraft = rondaDraft;
+        return this;
     }
 
     public Posicion getPosicion() {
         return posicion;
     }
 
-    public void setPosicion(Posicion posicion) {
+    public Jugador setPosicion(Posicion posicion) {
         this.posicion = posicion;
+        return this;
     }
 
     public String getPais() {
         return pais;
     }
 
-    public void setPais(String pais) {
+    public Jugador setPais(String pais) {
         this.pais = pais;
+        return this;
     }
 
     public String getColegio() {
         return colegio;
     }
 
-    public void setColegio(String colegio) {
+    public Jugador setColegio(String colegio) {
         this.colegio = colegio;
+        return this;
     }
 
     public byte[] getFoto() {
         return foto;
     }
 
-    public void setFoto(byte[] foto) {
+    public Jugador setFoto(byte[] foto) {
         this.foto = foto;
+        return this;
     }
 
     @Override
